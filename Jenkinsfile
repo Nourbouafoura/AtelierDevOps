@@ -1,22 +1,23 @@
 pipeline {
     agent any
-//test conflit
+
     stages {
-        stage('Git Checkout') {
+        stage('Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/Nourbouafoura/AtelierDevOps.git'
+                git branch : 'master ',
+                url : 'https://github.com/hwafa/timesheetproject.git'
             }
         }
-        
-        stage('Compile') {
+         stage('Compile') {
             steps {
                 sh 'mvn clean compile'
             }
         }
-    stage('MVN SONARQUBE') {
-        steps 
-        {sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=123 -Dmaven.skiptest =true';
+        stage('MVN Sonarqube') {
+            steps {
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=123 -Dmaven.test.skip=true'
+            }
+        }
+        
     }
-}
-}
 }
