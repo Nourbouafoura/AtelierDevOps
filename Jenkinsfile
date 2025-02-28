@@ -13,14 +13,17 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-      /*  stage('MVN Sonarqube') {
+/*
+        stage('MVN Sonarqube') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=123 -Dmaven.test.skip=true'
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar -Dmaven.test.skip=true'
             }
-        }*/
-        stage('Nexus DeploY') {
+        }
+        */
+  stage('MVN Nexus') {
             steps {
-                sh 'mvn deploy -Dmaven.test.skip=true'}
-        
+                sh 'mvn deploy -Dmaven.test.skip=true'
+            }
+        }
     }
 }
