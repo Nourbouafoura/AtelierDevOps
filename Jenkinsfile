@@ -5,7 +5,7 @@ pipeline {
         stage('Git') {
             steps {
                 git branch : 'main',
-                url : 'https://github.com/hwafa/timesheetproject.git'
+                url : 'https://github.com/Nourbouafoura/AtelierDevOps.git'
             }
         }
          stage('Compile') {
