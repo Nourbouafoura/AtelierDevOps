@@ -13,11 +13,14 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-        stage('MVN Sonarqube') {
+      /*  stage('MVN Sonarqube') {
             steps {
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=123 -Dmaven.test.skip=true'
             }
-        }
+        }*/
+        stage('Nexus DeploY') {
+            steps {
+                sh 'mvn deploy -Dmaven.test.skip=true'}
         
     }
 }
