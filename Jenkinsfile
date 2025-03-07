@@ -22,13 +22,13 @@ pipeline {
         */
   stage('MVN Nexus') {
             steps {
-                sh 'mvn deploy -Dmaven.test.skip=true'
+                sh 'mvn install -Dmaven.test.skip=true'
             }
         }
 
 stage('build Image ') {
             steps {
-                sh 'docker build -t nourbouafoura/timesheet-devops-1.0 .'
+                sh 'docker build -t nourbouafoura/timesheet-devops-1.0 . '
              }
          }
     }
