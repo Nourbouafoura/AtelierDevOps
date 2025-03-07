@@ -28,7 +28,7 @@ pipeline {
 
 stage('build Image ') {
             steps {
-                sh 'docker build -t nourbouafoura/timesheet-devops-1.0 . AtelierDevOps/Dockerfile'
+                sh 'docker build -t nourbouafoura/timesheet-devops-1.0 . /Dockerfile'
              }
          }
     }
