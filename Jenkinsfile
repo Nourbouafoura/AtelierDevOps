@@ -25,5 +25,11 @@ pipeline {
                 sh 'mvn deploy -Dmaven.test.skip=true'
             }
         }
+
+stage('build Image ') {
+            steps {
+                sh 'docker build -t nourbouafoura/timesheet-devops-1.0 .'
+             }
+         }
     }
 }
